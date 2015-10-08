@@ -1,3 +1,5 @@
+require_relative 'DifferentCurrencyCodeError'
+
 class Currency
 	attr_accessor(:code, :amount)
 
@@ -10,24 +12,28 @@ class Currency
     "#{@code} #{amount}"
   end
 
-  def equals(obj)
+  def ==(obj)
     self.code == obj.code && self.amount == obj.amount
   end
 
-  def plus(obj)
+  def +(obj)
     if self.code == obj.code
-      return self.amount + obj.amount
-    else 
-      return "Not possible."
+      return Currency.new(self.code, self.amount + obj.amount)
+    else
+      raise DifferentCurrencyCodeError 
     end
   end
 
-  def minus(obj)
+  def -(obj)
     if self.code == obj.code && self.amount >= obj.amount
-      return self.amount - obj.amount
+      return Currency.new(self.code, self.amount - obj.amount)
     else
-      return "Not possible."
+      raise DifferentCurrencyCodeError
     end
+  end
+
+  def *(num)
+    return self.amount * num
   end
 
 

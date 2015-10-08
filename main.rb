@@ -18,10 +18,12 @@ puts "John = Eddie? #{john.===(eddie)}"
 puts "Eddie = Alex? #{eddie.===(alex)}"
 puts "John + Eddie = #{john.+(eddie)}"
 puts "Eddie + Alex = #{eddie.+(alex)}"
-puts "Ringo + Alex = #{ringo.+(alex)}"
-puts "John - Eddie = #{john.-(eddie)}"
 puts "Eddie - Alex = #{eddie.-(alex)}"
+puts "John - Eddie = #{john.-(eddie)}"
+
 puts "Ringo - Alex = #{ringo.-(alex)}"
-rescue
+puts "Ringo + Alex = #{ringo.+(alex)}"
+
+rescue DifferentCurrencyCodeError
 	puts "You can't do that shit."
 end
