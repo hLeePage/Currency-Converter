@@ -1,13 +1,22 @@
 class Currency
-	attr_accessor :code, :val
-  
-	def initialize code, val
+	attr_accessor(:code, :amount)
+
+	def initialize(code, amount)
 		@code = code
-		@val = val
+		@amount = amount
 	end
 
   def to_s
-    "#{@code}, #{val}"
+    "#{@code} #{amount}"
   end
+
+  def equals(obj)
+    self.code == obj.code && self.amount == obj.amount
+  end
+
+
+
+
+
 end
 
