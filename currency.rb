@@ -14,6 +14,21 @@ class Currency
     self.code == obj.code && self.amount == obj.amount
   end
 
+  def plus(obj)
+    if self.code == obj.code
+      return self.amount + obj.amount
+    else 
+      return "Not possible."
+    end
+  end
+
+  def minus(obj)
+    if self.code == obj.code && self.amount >= obj.amount
+      return self.amount - obj.amount
+    else
+      return "Not possible."
+    end
+  end
 
 
 
