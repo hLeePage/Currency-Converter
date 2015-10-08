@@ -1,6 +1,6 @@
 require_relative 'DifferentCurrencyCodeError'
 require_relative "currency"
-begin
+#begin
 john = Currency.new("USD", 1)
 paul = Currency.new("JPY", 4)
 george = Currency.new("EUR", 23)
@@ -20,10 +20,11 @@ puts "John + Eddie = #{john.+(eddie)}"
 puts "Eddie + Alex = #{eddie.+(alex)}"
 puts "Eddie - Alex = #{eddie.-(alex)}"
 puts "John - Eddie = #{john.-(eddie)}"
-
 puts "Ringo - Alex = #{ringo.-(alex)}"
 puts "Ringo + Alex = #{ringo.+(alex)}"
+puts "John * 3 = #{john.*(3)}"
+puts "Paul * 4 = #{paul.*(6)}"
 
-rescue DifferentCurrencyCodeError
-	puts "You can't do that shit."
-end
+#rescue DifferentCurrencyCodeError
+	#puts "You can't do that shit."
+#end

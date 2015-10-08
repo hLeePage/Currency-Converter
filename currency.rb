@@ -20,7 +20,8 @@ class Currency
     if self.code == obj.code
       return Currency.new(self.code, self.amount + obj.amount)
     else
-      raise DifferentCurrencyCodeError 
+      return "No no."
+      #raise DifferentCurrencyCodeError 
     end
   end
 
@@ -28,12 +29,13 @@ class Currency
     if self.code == obj.code && self.amount >= obj.amount
       return Currency.new(self.code, self.amount - obj.amount)
     else
-      raise DifferentCurrencyCodeError
+      return "No no."
+      #raise DifferentCurrencyCodeError
     end
   end
 
   def *(num)
-    return self.amount * num
+    return Currency.new(self.code, (self.amount.to_i * num).to_s)
   end
 
 
