@@ -1,11 +1,20 @@
+require 'pry'
 require_relative 'DifferentCurrencyCodeError'
 
 class Currency
 	attr_accessor(:code, :amount)
 
-	def initialize(code, amount)
+	def initialize(code, amount = 0)
 		@code = code
 		@amount = amount
+
+    symbols = {'$' => 'USD', '&' => 'JPY'}
+    if @code[0] =~ /^[\W]$/
+      @amount = @code.slice(1..-1)
+      @code = symbols[@code[0]]
+      
+    end
+
 	end
 
   def to_s
@@ -41,5 +50,49 @@ class Currency
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
