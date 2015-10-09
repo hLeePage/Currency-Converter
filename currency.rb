@@ -7,7 +7,8 @@ class Currency
 		@code = code
 		@amount = amount
 
-    symbols = {'$' => 'USD', '&' => 'JPY'}
+    symbols = {'$' => 'USD', '£' => 'GBP', '€' => 'EUR'}
+
     if @code[0] =~ /^[\W]$/
       @amount = @code.slice(1..-1)
       @code = symbols[@code[0]]     
