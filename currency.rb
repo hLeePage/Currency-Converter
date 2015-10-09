@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'DifferentCurrencyCodeError'
 
 class Currency
@@ -11,8 +10,7 @@ class Currency
     symbols = {'$' => 'USD', '&' => 'JPY'}
     if @code[0] =~ /^[\W]$/
       @amount = @code.slice(1..-1)
-      @code = symbols[@code[0]]
-      
+      @code = symbols[@code[0]]     
     end
 
 	end
@@ -46,53 +44,4 @@ class Currency
   def *(num)
     return Currency.new(self.code, (self.amount.to_i * num).to_s)
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
